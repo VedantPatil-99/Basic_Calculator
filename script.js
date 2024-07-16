@@ -85,6 +85,7 @@ function evaluateExpression() {
             inputValue.innerText = "Cannot divide by zero";
             inputValue.style.color = "orangered";
         } else {
+            inputValue.style.color = "orangered";
             inputValue.innerText = "Some Error Occurred!";
         }
     }
