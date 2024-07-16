@@ -33,6 +33,7 @@ function handleOperationClick(e) {
         navigator.vibrate(50);
     }
 
+    const lastChar = inputValue.innerText.slice(-1);
     switch (operation) {
         case "=":
             evaluateExpression();
@@ -43,8 +44,12 @@ function handleOperationClick(e) {
         case "DEL":
             deleteLastCharacter();
             break;
+case "%":
+            if (!isNaN(lastChar) || lastChar === "." || lastChar === ")") {
+                inputValue.innerText += "%";
+            }
+            break;
         default:
-            const lastChar = inputValue.innerText.slice(-1);
             if (!isNaN(lastChar) || lastChar === "." || lastChar === ")") {
                 inputValue.innerText += operation;
             }
@@ -58,7 +63,12 @@ function evaluateExpression() {
             throw new Error("Cannot divide by zero");
         }
 
-        let result = eval(inputValue.innerText);
+        let expression = inputValue.innerText.trim();
+        expression = expression.replace(/%/g, "/100*");
+
+        let result = eval(expression);
+
+        //let result = eval(inputValue.innerText);
 
         if (Math.abs(result) > 1e12 || Math.abs(result) < 1e-12) {
             result = result.toExponential();
