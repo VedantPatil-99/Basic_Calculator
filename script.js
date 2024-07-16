@@ -23,6 +23,7 @@ function handleNumberClick(e) {
     }
 
     inputValue.innerText += e.target.innerHTML.trim();
+    
 }
 
 
@@ -44,7 +45,7 @@ function handleOperationClick(e) {
         case "DEL":
             deleteLastCharacter();
             break;
-case "%":
+        case "%":
             if (!isNaN(lastChar) || lastChar === "." || lastChar === ")") {
                 inputValue.innerText += "%";
             }
@@ -62,13 +63,14 @@ function evaluateExpression() {
         if (inputValue.innerText.includes('/0')) {
             throw new Error("Cannot divide by zero");
         }
-
         let expression = inputValue.innerText.trim();
         expression = expression.replace(/%/g, "/100*");
 
         let result = eval(expression);
-
-        //let result = eval(inputValue.innerText);
+        // let result = eval(inputValue.innerText);
+        if (!Number.isInteger(result)) {
+            result = parseFloat(result.toFixed(7));
+        }
 
         if (Math.abs(result) > 1e12 || Math.abs(result) < 1e-12) {
             result = result.toExponential();
@@ -83,7 +85,7 @@ function evaluateExpression() {
             inputValue.innerText = "Cannot divide by zero";
             inputValue.style.color = "orangered";
         } else {
-            inputValue.innerText = "Error!";
+            inputValue.innerText = "Some Error Occurred!";
         }
     }
 }
