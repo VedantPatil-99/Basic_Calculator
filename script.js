@@ -67,7 +67,7 @@ function evaluateExpression() {
             result = 0;
         }
         inputValue.innerText = result;
-        inputValue.style.color = "greenyellow";
+        inputValue.style.color = "var(--display-font-color)";
     } catch (error) {
         if (error.message === "Cannot divide by zero") {
             inputValue.innerText = "Cannot divide by zero";
@@ -81,7 +81,7 @@ function evaluateExpression() {
 
 function clearDisplay() {
     inputValue.innerText = "0";
-    inputValue.style.color = "white";
+    inputValue.style.color = "var(--text-color)";
 }
 
 
@@ -89,7 +89,32 @@ function deleteLastCharacter() {
     inputValue.innerText = inputValue.innerText.slice(0, -1);
     if (inputValue.innerText.length === 0) {
         inputValue.innerText = "0";
-        inputValue.style.color = "white";
+        inputValue.style.color = "var(--text-color)";
     }
 }
 
+const theme = localStorage.getItem("theme");
+const themeToggleBtn = document.querySelector(".theme-toggle");
+
+if (theme) {
+    document.body.classList.add(theme);
+    if (theme === "light-mode") {
+        themeToggleBtn.classList.remove("fa-moon");
+        themeToggleBtn.classList.add("fa-sun");
+    }
+}
+
+function handleThemeToggle() {
+    document.body.classList.toggle("light-mode");
+    if (document.body.classList.contains("light-mode")) {
+        localStorage.setItem("theme", "light-mode");
+        themeToggleBtn.classList.remove("fa-moon");
+        themeToggleBtn.classList.add("fa-sun");
+    } else {
+        localStorage.removeItem("theme");
+        themeToggleBtn.classList.remove("fa-sun");
+        themeToggleBtn.classList.add("fa-moon");
+    }
+}
+
+themeToggleBtn.addEventListener("click", handleThemeToggle);
