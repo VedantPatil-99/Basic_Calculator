@@ -9,9 +9,12 @@ This calculator project aims to provide a simple yet powerful tool for performin
 ## Features
 
 - **Basic Operations:** Addition, subtraction, multiplication, division, percentage calculation, add period, delete number, and all-clear functionalities.
-- **Fast Processing:** Minified CSS file for faster performance. [Original and unmodified CSS file](https://drive.google.com/drive/folders/154ev6Edn7hJJi3MxUae4mzoKrfiPYbin).
+- **Dark and Light Mode:** Toggles between light and dark themes when clicking on the button icon.
+- **Fast Processing:** Minified CSS file for faster performance. [Original and unmodified CSS file](https://drive.google.com/drive/folders/154ev6Edn7hJJi3MxUae4mzoKrfiPYbin).*(if not found, mail me!)*
 - **Interactive UI/UX:** Button press vibration, hover effects, and dynamic color changes (green-yellow for successful calculations, orange-red for errors).
 - **Responsive Design:** Optimized for the following devices:
+
+*Few of them may NOT show desired output design as this whole project is created on mobile.*
   - Apple iPhone XS Max
   - Apple iPhone XS
   - Apple iPhone XR
@@ -92,7 +95,9 @@ This calculator project aims to provide a simple yet powerful tool for performin
 5. Press the delete (⌫) button to remove the last entered digit.
 6. Press the all-clear (AC) button to reset the calculator.
 
-![Calculator Screenshot](screenshot.png)
+![Screenshot_Dark_Theme](https://github.com/user-attachments/assets/7567bb26-b066-4b85-8e06-10c2d2088b19)
+
+![Screenshot_Light_Theme](https://github.com/user-attachments/assets/b9e809f0-9b5b-4bc6-a0a1-85c6aca478b4)
 
 ## Credits
 
@@ -101,7 +106,7 @@ This calculator project aims to provide a simple yet powerful tool for performin
 
 ## Live Demo
 
-Check out the live demo of the calculator [here](https://your-live-demo-link.com).
+Check out the live demo of the calculator [𝘾𝙡𝙞𝙘𝙠 𝙃𝙚𝙧𝙚 ↗️](https://vedantpatil-99.github.io/Basic_Calculator/).
 
 ## License
 
