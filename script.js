@@ -59,7 +59,7 @@ case "%":
 
 function evaluateExpression() {
     try {
-        if (inputValue.innerText.includes('÷0')) {
+        if (inputValue.innerText.includes('/0')) {
             throw new Error("Cannot divide by zero");
         }
 
@@ -83,7 +83,7 @@ function evaluateExpression() {
             inputValue.innerText = "Cannot divide by zero";
             inputValue.style.color = "orangered";
         } else {
-            inputValue.innerText = "0";
+            inputValue.innerText = "Error!";
         }
     }
 }
